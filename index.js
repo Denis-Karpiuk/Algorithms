@@ -10,6 +10,7 @@ function binarySearch(arr, elem) {
 	console.log(left, right, midle)
 	while (left <= right) {
 		let guess = arr[midle]
+
 		if (guess === elem) {
 			return midle
 		} else if (guess > elem) {
