@@ -19,25 +19,8 @@ function binarySearch(arr, target) {
 }
 //! Сортировка выбором O(n2)
 const numbersArray = [3, 7, 9, 8, 2]
-function smalestItem(array) {
-	let item = array[0]
-	for (let i = 0; i < array.length; i++) {
-		const element = array[i]
-		if (element < item) item = element
-	}
-	return item
-}
 
-function sotrArray(arr) {
-	let array = arr
-	let newArr = []
-	for (let i = 0; i < array.length; i++) {
-		// дописать код
-	}
-	return newArr
-}
-
-console.log(sotrArray(numbersArray))
+// ?Написать сортировку выбором!!!
 
 //! =====Рекурсия=====
 //*Поиск ключа -  Обычный цикл
