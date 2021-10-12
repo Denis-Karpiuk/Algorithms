@@ -20,7 +20,26 @@ function binarySearch(arr, target) {
 //! Сортировка выбором O(n2)
 const numbersArray = [3, 7, 9, 8, 2]
 
-// ?Написать сортировку выбором!!!
+function findeSmallestItem(arr) {
+	let item = arr[0]
+	let index = 0
+	for (let i = 1; i < arr.length; i++) {
+		if (arr[i] < item) {
+			index = i
+		}
+	}
+	return index
+}
+
+function sortChoice(arr) {
+	let result = []
+	let length = arr.length
+	for (let i = 0; i < length; i++) {
+		let smallest = findeSmallestItem(arr)
+		result.push(arr.splice(smallest, 1)[0])
+	}
+	return result
+}
 
 //! =====Рекурсия=====
 //*Поиск ключа -  Обычный цикл
@@ -49,7 +68,7 @@ function searchKeyRec(box) {
 }
 
 //* Факториал - рекурсия.
-function fact(num) {
-	if (num === 1) return 1
-	return num * fact(num - 1)
+function fact(x) {
+	if (x === 1) return 1
+	return x * fact(x - 1)
 }
