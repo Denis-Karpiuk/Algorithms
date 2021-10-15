@@ -1,23 +1,20 @@
-//! Бинарный поиск O(log n)
+//!  #1 Бинарный поиск O(log n)
 //* Обязательное условие, массив дожен быть отсортирован
 const sortArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-
 function binarySearch(arr, target) {
 	let left = 0
 	let right = arr.length - 1
 	let midle
-
 	while (left <= right) {
 		midle = Math.floor((right + left) / 2)
 		let guess = arr[midle]
-
 		if (guess > target) right = midle - 1
 		if (guess < target) left = midle + 1
 		if (guess === target) return midle
 	}
 	return null
 }
-//! Сортировка выбором O(n2)
+//! #2 Сортировка выбором O(n2)
 const numbersArray = [3, 7, 9, 8, 2]
 
 function findeSmallestItem(arr) {
@@ -41,8 +38,8 @@ function sortChoice(arr) {
 	return result
 }
 
-//! =====Рекурсия=====
-//*Поиск ключа -  Обычный цикл
+//! #3 Рекурсия
+//* Поиск ключа -  Обычный цикл
 let boxes = ['notKey', 'notKey', 'notKey', ['key']]
 function searchKey(boxes) {
 	let allBoxes = [...boxes]
@@ -56,7 +53,7 @@ function searchKey(boxes) {
 	return 'not key'
 }
 
-//*Поиск ключа - Рекурсия
+//* Поиск ключа - Рекурсия
 function searchKeyRec(box) {
 	for (let i = 0; i < box.length; i++) {
 		if (Array.isArray(box[i])) {
@@ -71,4 +68,13 @@ function searchKeyRec(box) {
 function fact(x) {
 	if (x === 1) return 1
 	return x * fact(x - 1)
+}
+
+//! #4 Быстрая сортировка
+//* Рекурсия для суммирования чисел массива
+const arraySum = [1, 2, 3, 4, 5]
+function sum(arr) {
+	if (arr.length === 0) return 0
+	if (arr.length === 1) return arr[0]
+	return arr.shift() + sum(arr)
 }
