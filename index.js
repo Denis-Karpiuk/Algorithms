@@ -78,3 +78,9 @@ function sum(arr) {
 	if (arr.length === 1) return arr[0]
 	return arr.shift() + sum(arr)
 }
+
+//* Рекурсия для подсчёта количества элементо в массиве
+function countItems(arr) {
+	if (arr.length === 0) return 0
+	return 1 + countItems(arr.slice(1))
+}
