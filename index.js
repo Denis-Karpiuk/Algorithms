@@ -94,7 +94,7 @@ function maxNumber(arr) {
 	return subMax
 }
 
-//* Быстрая сортировка
+//* Быстрая сортировка O(n log(n))
 function quickSort(arr) {
 	if (arr.length < 2) return arr
 	let pivot = arr[0]
