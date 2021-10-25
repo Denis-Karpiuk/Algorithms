@@ -101,11 +101,11 @@ function quickSort(arr) {
 	let newArr = arr.slice(1)
 	let less = []
 	let more = []
-	for (let i = 0; i < newArr.length; i++) {
-		if (newArr[i] <= pivot) less.push(newArr[i])
-		if (newArr[i] > pivot) more.push(newArr[i])
+	for (let element of newArr) {
+		if (element <= pivot) less.push(element)
+		if (element > pivot) more.push(element)
 	}
 	return [...quickSort(less), pivot, ...quickSort(more)]
 }
 
-console.log(quickSort([1, 30, 5]))
+console.log(quickSort([1, 30, 5, 3, 8, 6, 8]))
