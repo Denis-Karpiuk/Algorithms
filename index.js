@@ -72,15 +72,40 @@ function fact(x) {
 
 //! #4 Быстрая сортировка
 //* Рекурсия для суммирования чисел массива
-const arraySum = [1, 2, 3, 4, 5]
-function sum(arr) {
+const numbers = [10, 2, 6, 4, 7]
+function sumNumbers(arr) {
 	if (arr.length === 0) return 0
-	if (arr.length === 1) return arr[0]
-	return arr.shift() + sum(arr)
+	return arr.shift() + sumNumbers(arr)
 }
-
-//* Рекурсия для подсчёта количества элементо в массиве
+//* Рекурсия для подсчёта количества элемнтов в массиве
 function countItems(arr) {
 	if (arr.length === 0) return 0
 	return 1 + countItems(arr.slice(1))
 }
+//* Рекурсия для нахождения самого большого числа в массиве
+function maxNumber(arr) {
+	if (arr.length === 2) {
+		if (arr[0] > arr[1]) return arr[0]
+		return arr[1]
+	}
+
+	let subMax = maxNumber(arr.slice(1))
+	if (arr[0] > subMax) return arr[0]
+	return subMax
+}
+
+//* Быстрая сортировка
+function quickSort(arr) {
+	if (arr.length < 2) return arr
+	let pivot = arr[0]
+	let newArr = arr.slice(1)
+	let less = []
+	let more = []
+	for (let i = 0; i < newArr.length; i++) {
+		if (newArr[i] <= pivot) less.push(newArr[i])
+		if (newArr[i] > pivot) more.push(newArr[i])
+	}
+	return [...quickSort(less), pivot, ...quickSort(more)]
+}
+
+console.log(quickSort([1, 30, 5]))
