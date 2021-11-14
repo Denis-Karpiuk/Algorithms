@@ -1,8 +1,7 @@
 //* Key search (normal cycle)
 
-let boxes = ['notKey', 'notKey', 'notKey', ['key']]
-function searchKey(boxes) {
-	let allBoxes = [...boxes]
+function searchKeyCycle(arr) {
+	let allBoxes = [...arr]
 	for (let i = 0; i < allBoxes.length; i++) {
 		if (allBoxes[i] === 'key') {
 			return 'key found'
@@ -12,3 +11,5 @@ function searchKey(boxes) {
 	}
 	return 'not key'
 }
+
+module.exports = searchKeyCycle

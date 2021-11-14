@@ -1,5 +1,4 @@
 //* Sorting by choice - O(n2)
-const numbersArray = [3, 7, 9, 8, 2]
 
 function findeSmallestItem(arr) {
 	let item = arr[0]
@@ -11,7 +10,6 @@ function findeSmallestItem(arr) {
 	}
 	return index
 }
-
 function sortChoice(arr) {
 	let result = []
 	let length = arr.length
@@ -21,3 +19,5 @@ function sortChoice(arr) {
 	}
 	return result
 }
+
+module.exports = sortChoice
