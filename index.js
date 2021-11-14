@@ -1,16 +1,16 @@
 //!  #1 Бинарный поиск O(log n)
 //* Обязательное условие, массив дожен быть отсортирован
 const sortArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-function binarySearch(arr, target) {
+function binarySearch(arr, searchElement) {
 	let left = 0
 	let right = arr.length - 1
 	let midle
 	while (left <= right) {
 		midle = Math.floor((right + left) / 2)
-		let guess = arr[midle]
-		if (guess > target) right = midle - 1
-		if (guess < target) left = midle + 1
-		if (guess === target) return midle
+		let midleElement = arr[midle]
+		if (midleElement === searchElement) return midle
+		if (midleElement > searchElement) right = midle - 1
+		if (midleElement < searchElement) left = midle + 1
 	}
 	return null
 }
@@ -107,5 +107,3 @@ function quickSort(arr) {
 	}
 	return [...quickSort(less), pivot, ...quickSort(more)]
 }
-
-console.log(quickSort([1, 30, 5, 3, 8, 6, 8]))
