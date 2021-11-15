@@ -1,4 +1,5 @@
-//* Быстрая сортировка O(n log(n))
+//* Quick sort O(n log(n))
+
 function quickSort(arr) {
 	if (arr.length < 2) return arr
 	let pivot = arr[0]
@@ -11,3 +12,5 @@ function quickSort(arr) {
 	}
 	return [...quickSort(less), pivot, ...quickSort(more)]
 }
+
+module.exports = quickSort
